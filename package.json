@@ -1,0 +1,33 @@
+{
+  "name": "movies-api",
+  "version": "0.1.0",
+  "description": "api that provide movies info",
+  "main": "index.js",
+  "scripts": {
+    "dev": "DEBUG=app:* nodemon index",
+    "start": "NODE_ENV=production node index",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "javascript",
+    "express",
+    "npm"
+  ],
+  "author": "Hugo Lara <hugo.alex200197@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
