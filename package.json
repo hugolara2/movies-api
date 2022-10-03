@@ -8,6 +8,10 @@
     "start": "NODE_ENV=production node index",
     "prepare": "husky install"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugolara2/movies-api.git"
+  },
   "keywords": [
     "javascript",
     "express",
