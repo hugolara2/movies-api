@@ -4,13 +4,20 @@ const app = express();
 const { config } = require('./config');
 const moviesApi = require('./routes/movies');
 
-const { logErrors, errorHandler} = require('./utils/middleware/errorHandler');
+const { 
+  logErrors, 
+  wrapError,
+  errorHandler
+} = require('./utils/middleware/errorHandler');
 
+//body Parser
 app.use(express.json());
 
 moviesApi(app);
 
+//Errors middleware
 app.use(logErrors);
+app.use(wrapError);
 app.use(errorHandler);
 
 
