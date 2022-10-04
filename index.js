@@ -10,10 +10,16 @@ const {
   errorHandler
 } = require('./utils/middleware/errorHandler');
 
+const notFoundHandler = require('./utils/middleware/notFoundHandler');
+
 //body Parser
 app.use(express.json());
 
+//routes
 moviesApi(app);
+
+//catch 404
+app.use(notFoundHandler);
 
 //Errors middleware
 app.use(logErrors);
