@@ -1,8 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
 
+const fs = require('fs');
+var accessLogStream = fs.createWriteStream('logs/access.log',{flags: 'a'});
 const MoviesService = require('../services/movies');
 
+const { config } = require('../config');
 const {
   movieIdSchema,
   createMovieSchema,
@@ -13,7 +16,12 @@ const validationHandler = require('../utils/middleware/validationHandler');
 
 function moviesApi(app) {
   const router = express.Router();
-  app.use(morgan('combined'));
+  if(config.dev) {
+    app.use(morgan('combined'));
+  } else {
+    app.use(morgan('combined', {stream: accessLogStream}));
+  }
+  
   app.use('/api/movies', router);
 
   const moviesService = new MoviesService();
