@@ -1,4 +1,6 @@
 const express = require('express');
+const morgan = require('morgan');
+
 const MoviesService = require('../services/movies');
 
 const {
@@ -11,6 +13,7 @@ const validationHandler = require('../utils/middleware/validationHandler');
 
 function moviesApi(app) {
   const router = express.Router();
+  app.use(morgan('combined'));
   app.use('/api/movies', router);
 
   const moviesService = new MoviesService();
