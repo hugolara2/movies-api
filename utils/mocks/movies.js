@@ -1,7 +1,7 @@
 const moviesMock = [
   {
     id: 'd2a4a062-d256-41bb-b1b2-9d915af6b75e',
-    title: 'Notti bianche, Le (White Nights)',
+    title: 'The night of the living dead (White Nights)',
     year: 2019,
     cover: 'http://dummyimage.com/800x600.png/ff4444/ffffff',
     description:
