@@ -43,7 +43,7 @@ const moviesMock = [
   },
   {
     id: 'c030eed2-dad1-47f4-b660-9cfb7170eadb',
-    title: 'Inhuman Resources (Redd Inc.)',
+    title: 'Monsters inc',
     year: 2018,
     cover: 'http://dummyimage.com/800x600.png/ff4444/ffffff',
     description:
